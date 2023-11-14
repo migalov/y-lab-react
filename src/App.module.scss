@@ -1,0 +1,174 @@
+.App {
+  padding: 2rem;
+}
+
+.line {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2em 0;
+  box-shadow: var(--default-shadow);
+  border-radius: 2rem;
+}
+
+.authContainer {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.authHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.authLabel {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.authLabelTitle {
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.authLabelInput {
+  font-size: 1rem;
+  padding: 1em;
+  outline: 1px solid var(--color-light-gray);
+  border-radius: .5em;
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+  }
+}
+
+.authLabelMessage {
+  font-size: .75rem;
+}
+
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+.authBlockCheckbox {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authCheckbox {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  width: 1.75em;
+  height: 1.75em;
+  border: 1px solid var(--color-light-gray);
+  border-radius: .5em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+.authCheckbox::before {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  clip-path: polygon(81% 23%, 87% 29%, 38% 78%, 15% 55%, 21% 49%, 38% 67%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-primary);
+  background-color: CanvasText;
+}
+
+.authCheckbox:checked::before {
+  transform: scale(1);
+}
+
+.authLink {
+  color: var(--color-primary);
+}
+
+.authButton {
+  padding: 1.15rem 1rem;
+  border-radius: .5em;
+  line-height: 150%;
+}
+
+.authButton__primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.authLineOr {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  & .line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    width: 100%;
+  }
+
+  & .or {
+    padding: 0.25em 0.75em;
+    background-color: var(--color-white);
+    color: var(--color-light-gray);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.authWayRegistration {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  outline: 1px solid var(--color-light-gray);
+  padding: 1rem;
+  border-radius: .75em;
+  
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-white);
+  }
+}
+
+.authTerms {
+  display: flex;
+  flex-direction: column;
+  gap: .4em;
+  text-align: center;
+}
+
+
+// .authCheckbox:focus {
+//   outline: max(2px, 0.15em) solid currentColor;
+//   outline-offset: max(2px, 0.15em);
+// }
+
+// .authCheckbox:disabled {
+//   --form-control-color: var(--form-control-disabled);
+
+//   color: var(--form-control-disabled);
+//   cursor: not-allowed;
+// }
